@@ -5,8 +5,9 @@ using Permacall.Domain.Enumerators;
 
 namespace Permacall.Domain.Entities
 {
-    class Account
+    public class Account
     {
+        public int AccountId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public int OperatorCount { get; set; }

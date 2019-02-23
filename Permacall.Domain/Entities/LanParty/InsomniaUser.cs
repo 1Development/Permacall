@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Permacall.Domain.Entities.LanParty
 {
-    class InsomniaUser
+    public class InsomniaUser
     {
         public string Name { get; set; }
         public DateTime? DropOutTime { get; set; }

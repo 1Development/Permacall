@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Permacall.Domain.Entities.LanParty
 {
-    class LanParty
+    public class LanParty
     {
     }
 }

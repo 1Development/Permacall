@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Permacall.Domain.Enumerators
 {
-    enum PermissionGroups
+    public enum PermissionGroups
     {
         GUEST,
         USER,
