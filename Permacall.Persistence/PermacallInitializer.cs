@@ -9,6 +9,8 @@ namespace Permacall.Persistence
 {
     public class PermacallInitializer
     {
+        readonly  Dictionary<int, Account> Accounts = new Dictionary<int, Account>();
+
         public static void Initialize(PermacallDbContext context)
         {
             var initializer = new PermacallInitializer();
@@ -26,14 +28,15 @@ namespace Permacall.Persistence
 
         public void SeedAccounts(PermacallDbContext context)
         {
-            var accounts = new[]
-            {
-                new Account() {Username = "admin", Password = "test123", PermissionGroup = PermissionGroups.ADMIN},
-                new Account() {Username = "user", Password = "test123", PermissionGroup = PermissionGroups.USER},
-                new Account() {Username = "guest", Password = "test123", PermissionGroup = PermissionGroups.GUEST},
-            };
+            Accounts.Add(1, new Account() {Username = "admin", Password = "test123", PermissionGroup = PermissionGroups.ADMIN});
+            Accounts.Add(2, new Account() {Username = "user", Password = "test123", PermissionGroup = PermissionGroups.USER});
+            Accounts.Add(3, new Account() {Username = "guest", Password = "test123", PermissionGroup = PermissionGroups.GUEST});
 
-            context.Accounts.AddRange(accounts);
+            foreach (var account in Accounts.Values)
+            {
+                context.Accounts.Add(account);
+            }
+
             context.SaveChanges();
         }
     }

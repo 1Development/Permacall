@@ -6,12 +6,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Permacall.Common\Permacall.Common.csproj" />
+    <ProjectReference Include="..\Permacall.Infrastructure\Permacall.Infrastructure.csproj" />
     <ProjectReference Include="..\Permacall.Persistence\Permacall.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MediatR">
+      <HintPath>C:\Users\youri\.nuget\packages\mediatr\6.0.0\lib\netstandard2.0\MediatR.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

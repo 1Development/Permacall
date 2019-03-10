@@ -2,7 +2,8 @@
 
 namespace Permacall.Common
 {
-    public class Class1
+    public class IDateTime
     {
+        DateTime Now { get; }
     }
 }
