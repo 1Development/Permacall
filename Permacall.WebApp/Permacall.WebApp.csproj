@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Permacall.Application\Permacall.Application.csproj" />
     <ProjectReference Include="..\Permacall.Common\Permacall.Common.csproj" />
     <ProjectReference Include="..\Permacall.Infrastructure\Permacall.Infrastructure.csproj" />
     <ProjectReference Include="..\Permacall.Persistence\Permacall.Persistence.csproj" />
