@@ -11,29 +11,29 @@ namespace Permacall.WebApp.Controllers
 {
 
     [ApiController]
-    [Route("api/[controller]/[action]")]
-    public class ValuesController : ControllerBase
+    [Route("api/[controller]")]
+    public class ValuesController : BaseController
     {
         // GET api/values
-        [HttpGet("")]
+        [HttpGet()]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<GetAccountViewModel>> Get(int id)
-        //{
-        //    return Ok(await Mediator.Send(new GetAccountQuery() { AccountId = id }));
-        //}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GetAccountViewModel>> Get(int id)
+        {
+            return Ok(await Mediator.Send(new GetAccountQuery() { AccountId = id }));
+        }
 
 
-        //[HttpPost]
-        //public async Task<ActionResult<string>> UpdateAccount(UpdateAccountCommand command)
-        //{
-        //    return Ok(await Mediator.Send(command));
-        //}
+        [HttpPost]
+        public async Task<ActionResult<string>> UpdateAccount([FromBody] UpdateAccountCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
 
         // PUT api/values/5
         [HttpPut("{id}")]
